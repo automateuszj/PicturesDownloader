@@ -1,8 +1,14 @@
 trigger:
 - master
 
-pool:
-  vmImage: windows-latest
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:
+  - job: BuildJob
+    displayName: Build job
+    pool:
+      vmImage: windows-latest
 
 steps:
 - script: echo Hello, world!
